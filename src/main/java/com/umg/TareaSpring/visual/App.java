@@ -1,5 +1,6 @@
 package com.umg.TareaSpring.visual;
 
+import com.sun.org.apache.regexp.internal.RE;
 import com.umg.TareaSpring.clases.Persona;
 import com.umg.TareaSpring.clases.PersonaRepository;
 import com.umg.TareaSpring.clases.TrabajoRepository;
@@ -65,6 +66,7 @@ public class App extends UI {
 
     protected void revisarPersonas(){
         VerticalLayout layout = new VerticalLayout();
+        Label texto = new Label("Trabajadores dados de Alta");
 
         Grid<Persona> grid = new Grid<>();
         grid.addColumn(Persona::getId).setCaption("ID");
@@ -82,13 +84,14 @@ public class App extends UI {
             }
         });
 
-        layout.addComponent(grid);
-        layout.addComponent(regresar);
+        layout.addComponents(texto,grid);
+        layout.addComponents(regresar);
         setContent(layout);
     }
 
     protected void Principal() {
         VerticalLayout layout = new VerticalLayout();
+        Label texto = new Label("Control de Trabajadores - UVG");
 
         Button pantalla1 = new Button("Agregar Datos");
         pantalla1.addClickListener(new Button.ClickListener() {
@@ -105,7 +108,7 @@ public class App extends UI {
                 revisarPersonas();
             }
         });
-        layout.addComponent(pantalla1);
+        layout.addComponents(texto,pantalla1);
         layout.addComponent(pantalla2);
         setContent(layout);
     }
