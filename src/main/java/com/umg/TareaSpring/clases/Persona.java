@@ -1,5 +1,6 @@
 package com.umg.TareaSpring.clases;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
